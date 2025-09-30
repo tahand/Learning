@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  python-env:
+    build: .
+    container_name: python-notebooks
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app:cached    # 👈 live-sync host folder into container
+    command: sleep infinity  # keep container running for VS Code Dev Containers
